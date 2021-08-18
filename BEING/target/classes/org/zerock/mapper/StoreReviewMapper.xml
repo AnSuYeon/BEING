@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.StoreReviewMapper">
+
+	<select id="list" resultType="org.zerock.domain.StoreReviewVO">
+		select
+		*
+		from
+		prod_comt
+		where prodnum =
+		#{prodnum}
+		order by prodnum desc
+	</select>
+
+	<insert id="create">
+		insert into prod_comt (num, email, prodnum, registday, grade, contentof)
+		values (prod_comt_seq.nextval,#{email}, #{prodnum},sysdate,#{grade},#{contentof})
+	</insert>
+
+	<update id="update">
+		update prod_comt set contentof = #{contentof}, grade = #{grade}
+		where num = #{num}
+	</update>
+
+	<delete id="delete">
+		delete from prod_comt where num =#{num}
+	</delete>
+
+
+	<select id="listPage" resultType="org.zerock.domain.StoreReviewVO">
+		select PC.*, M.NAME 
+		from PROD_COMT PC, MEMBERS M
+					where PC.PRODNUM = #{prodnum}
+					AND PC.EMAIL = M.EMAIL
+					order by num desc
+		
+<!-- 		limit #{cri.pageStart}, #{cri.perPageNum} -->
+	</select>
+
+	<select id="count" resultType="int">
+		select count(prodnum) from prod_comt
+		where prodnum =#{prodnum}
+	</select>
+
+
+	<select id="getProdnum" resultType="int">
+		select prodnum from prod_comt where num = #{num}
+	</select>
+	
+	<update id="updateGrade">
+		update PROD_MNG SET AVGGRADE = (
+		SELECT AVG(GRADE) FROM PROD_COMT WHERE PRODNUM = #{prodnum})
+		WHERE PRODNUM = #{prodnum}
+	</update>
+
+</mapper>
+

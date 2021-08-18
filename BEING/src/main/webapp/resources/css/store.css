@@ -1,0 +1,414 @@
+@charset "EUC-KR";
+
+.login-logo, .register-logo {
+   font-size: 35px;
+   text-align: left;
+   margin-top: 40px;
+   margin-bottom: 25px;
+   font-family: 'Squada One', cursive;
+   border-bottom: 1px solid black;
+   padding-bottom: 25px;
+   padding-left: 300px;
+}
+
+.login-logo a, .register-logo a {
+   color: #444;
+   font-size: 48px;
+   text-decoration: none;
+   font-weight: bold;
+   width: 10px;
+}
+
+.login-logo a img {
+   position: relative;
+   top : 15px;
+}
+
+.box-title {
+   width: 700px;
+   margin: 80px 0 0 600px;
+   text-align: center;
+   font-size: 30px;
+   font-weight: 700;
+   color: #9dcb85;
+}
+
+.box {
+/*    background-color: #9dcb85; */
+   margin: 40px 0 100px 550px;
+   padding-top: 40px;
+   width: 800px; height: 1300px;
+   text-align: center;
+   border-radius: 7px;
+   border: 2px solid #9dcb85;
+   font-size: 20px;
+   font-weight: 700;
+   color: #6a6a6a;
+}
+
+#btn {
+/*    margin-left: 500px; */
+   width:200px;
+   height: 60px;
+   font:"³ª´® °íµñ";
+   font-size: 20px;
+   color:#ffff;
+   font-weight:bold;
+   margin-top: 30px;
+   background: #8BC26D;
+   
+   border-radius: 5px;
+  border:0;
+  outline:0;
+}
+#btn:hover{
+   background: #7fb362;
+   
+}
+
+.regist-box {
+	text-align: center;
+}
+
+.story-category {
+	margin-left: 35px;
+}
+
+.story-category li {
+	display: inline-block;
+	color: #65a343;
+/* 	padding: 1px; */
+}
+
+select {
+     width:150px;
+     padding:5px;
+     margin: 20px 50px 30px 5px;
+     border:1px solid #999;
+     font-family:'Nanumgothic';
+     font-size:20px;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance : none;
+     border-color:#8BC26D;
+     border-radius: 5px;
+     text-align: center;
+     text-align-last: center; 
+	-ms-text-align-last: center; 
+	-moz-text-align-last: center;
+}
+.all-content{
+	resize: none;
+	text-align: center;
+}
+
+.all-content p {
+	float: left;
+	padding-left: 60px;
+	color: #65a343;
+}
+
+.price p input {
+	margin-left: 82px;
+}
+
+.brand p input {
+	margin-left: 62px;
+}
+
+.keywd p input {
+	margin-left: 62px;
+}
+
+.thumbnail p input {
+	margin-left: 62px;
+}
+
+.infoimage p input {
+	margin-left: 12px;
+}
+
+.all-content input{
+	resize: none;
+	font-family:'Nanumgothic';
+     font-size:20px;
+     padding:5px;
+	width:500px;
+	height: 40px;	
+	margin-left: 36px;
+	margin-top: 20px;
+}
+
+.content input {
+	resize: none;
+	font-family:'Nanumgothic';
+    font-size:20px;
+    padding:5px;
+	width:500px;
+	height: 200px;	
+	margin-left: 36px;
+	margin-top: 20px;
+}
+
+.thumbnail input {
+	resize: none;
+	font-family:'Nanumgothic';
+    font-size:20px;
+    padding:5px;
+	width:500px;
+	height: 100px;	
+	margin-left: 36px;
+	margin-top: 20px;
+}
+
+.infoimage input {
+	resize: none;
+	font-family:'Nanumgothic';
+    font-size:20px;
+    padding:5px;
+	width:500px;
+	height: 100px;	
+	margin-left: 36px;
+	margin-top: 20px;
+}
+
+.link input {
+	resize: none;
+	font-family:'Nanumgothic';
+    font-size:20px;
+    padding:5px;
+	width:500px;
+	height: 100px;	
+	margin-left: 36px;
+	margin-top: 20px;
+}
+
+.all-content textarea {
+	resize: none;
+	font-family:'Nanumgothic';
+     font-size:20px;
+     padding:5px;
+	width:500px;
+	height: 100px;	
+	margin-left: 36px;
+	margin-top: 20px;
+}
+
+/* star */
+
+.rating .rate_radio + label {
+    position: relative;
+    display: inline-block;
+    margin-left: -4px;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    background-image: url('${pageContext.request.contextPath}/resources/img/starrate.png');
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+.rating .rate_radio:checked + label {
+    background-color: #ff8;
+}
+
+/* ·¹ÀÌ¾Æ¿ô ¿Ü°û ³Êºñ 400px Á¦ÇÑ*/
+.wrap{
+    max-width: 480px;
+    margin: 0 auto; /* È­¸é °¡¿îµ¥·Î */
+    background-color: #fff;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+.reviewform textarea{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.rating .rate_radio {
+    position: relative;
+    display: inline-block;
+    z-index: 20;
+    opacity: 0.001;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    cursor: pointer;
+    vertical-align: top;
+    display: none;
+}
+.rating .rate_radio + label {
+    position: relative;
+    display: inline-block;
+    margin-left: -4px;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    background-image: url('../../resources/img/starrate.png');
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+.rating .rate_radio:checked + label {
+    background-color: #ff8;
+}
+
+.warning_msg {
+    display: none;
+    position: relative;
+    text-align: center;
+    background: #ffffff;
+    line-height: 26px;
+    width: 100%;
+    color: red;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+}
+
+span.stars, span.stars span {
+    display: block;
+    background: url(stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}
+
+/* star end */
+
+
+/* storeModifyForm */
+.box-title {
+   width: 700px;
+   margin: 80px 0 0 600px;
+   text-align: center;
+   font-size: 30px;
+   font-weight: 700;
+   color: #9dcb85;
+}
+
+.box {
+/*    background-color: #9dcb85; */
+   margin: 40px 0 100px 705px;
+   padding-top: 20px;
+   width: 500px;
+   height: 380px;
+   text-align: center;
+   border-radius: 7px;
+   border: 2px solid #9dcb85;
+   font-size: 20px;
+   font-weight: 700;
+   color: #6a6a6a;
+}
+
+
+
+#btn {
+/*    margin-left: 500px; */
+   width:200px;
+   height: 60px;
+   font:"³ª´® °íµñ";
+   font-size: 20px;
+   color:#ffff;
+   font-weight:bold;
+   margin-top: 10px;
+   background: #8BC26D;
+   
+   border-radius: 5px;
+  border:0;
+  outline:0;
+}
+#btn:hover{
+   background: #7fb362;
+   
+}
+
+
+.all-content{
+   resize: none;
+   text-align: center;
+}
+
+.all-content p {
+   float: left;
+   padding-left: 30px;
+   color: #65a343;
+   
+}
+
+.all-content .title input {
+   margin-left: 41px;
+}
+
+
+
+.all-content input{
+   resize: none;
+   font-family:'Nanumgothic';
+     font-size:20px;
+     padding:5px;
+   width:600px;
+   height: 40px;   
+   margin-left: 36px;
+   margin-top: 20px;
+}
+
+.introduce input {
+   resize: none;
+   font-family:'Nanumgothic';
+    font-size:20px;
+    padding:5px;
+   width:600px;
+   height: 200px;   
+   margin-left: 35px;
+   margin-top: 20px;
+}
+
+
+
+.all-content textarea {
+   resize: none;
+   font-family:'Nanumgothic';
+     font-size:20px;
+     padding:5px;
+   width:500px;
+   height: 100px;   
+   margin-left: 36px;
+   margin-top: 20px;
+}
+
+.review_rating {
+   margin-bottom: 10px;
+}
+
+
+.review_textarea {
+   width: 300px;
+   height: 150px;
+}
+
+.store-review-submit button{
+   margin-top: 0px;
+}
+
+
+.storeModify-box {
+/*    background-color: #9dcb85; */
+   margin: 40px 0 100px 705px;
+   padding-top: 20px;
+   width: 500px;
+   height: 460px;
+   text-align: center;
+   border-radius: 7px;
+   border: 2px solid #9dcb85;
+   font-size: 20px;
+   font-weight: 700;
+   color: #6a6a6a;
+}

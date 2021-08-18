@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.InteriorAskMapper">
+
+	<insert id="create">
+		INSERT INTO REQ_MNG
+		(NUM,EMAIL,NAME,TITLE, REGISTDAY,
+		BUDGET, AREA, FIELDOF, ADDRESS, DATESTART, DATEDONE, MESSAGE, CNAME,
+		ANSWER, GRADE, CONTENTOF, TEL, IMAGEA, IMAGEB)
+		values(REQ_MNG_SEQ.nextval,#{email},#{name},
+		#{title},SYSDATE,#{budget}, #{area}, #{fieldof}, #{address},
+		#{datestart}, #{datedone}, #{message},#{cname}, null, null, null,
+		#{tel}, null, null)
+	</insert>
+
+	<!-- id 속성은 DAO 의 메소드와 같아야 한다. 여기의 boardVO 는 mybatis-confg.xml 에 Alias 되어 
+		있습니다. -->
+	<select id="read" resultType="org.zerock.domain.InteriorAskVO">
+		SELECT
+		A.NUM
+		, A.EMAIL
+		, A.NAME
+		, A.TITLE
+		, A.REGISTDAY
+		, A.BUDGET
+		, A.AREA
+		, A.FIELDOF
+		, A.ADDRESS
+		, A.DATESTART
+		, A.DATEDONE
+		, A.MESSAGE
+		, A.TEL
+		, A.CNAME
+		, A.ANSWER
+		, A.GRADE
+		, A.CONTENTOF
+		FROM REQ_MNG A
+		WHERE NUM = #{num}
+	</select>
+
+	<update id="update">
+		UPDATE REQ_MNG SET
+		ANSWER=#{answer}
+		WHERE NUM = #{num}
+	</update>
+	
+	<update id="update2">
+		UPDATE REQ_MNG SET
+		  GRADE=#{grade}
+		, CONTENTOF=#{contentof}
+		WHERE NUM = #{num}
+	</update>
+
+	<delete id="delete">
+		delete from REQ_MNG where NUM = #{num}
+	</delete>
+
+	<select id="selectInteriorAskList"
+		resultType="org.zerock.domain.InteriorAskVO">
+		SELECT NUM       <!-- 인테리어 신청글 READ -->
+		, EMAIL
+		, NAME
+		, TITLE
+		, REGISTDAY
+		, BUDGET
+		, AREA
+		, FIELDOF
+		, ADDRESS
+		, DATESTART
+		, DATEDONE
+		, MESSAGE
+		, TEL
+		, CNAME
+		FROM REQ_MNG
+		ORDER BY NUM DESC
+	</select>
+
+	<select id="selectInteriorAskList2"
+		resultType="org.zerock.domain.InteriorAskVO">
+		SELECT NUM       <!-- 인테리어 신청글+업체답변 READ -->
+		, EMAIL
+		, NAME
+		, TITLE
+		, REGISTDAY
+		, BUDGET
+		, AREA
+		, FIELDOF
+		, ADDRESS
+		, DATESTART
+		, DATEDONE
+		, MESSAGE
+		, TEL
+		, CNAME
+		, ANSWER
+		FROM REQ_MNG
+		ORDER BY NUM DESC
+	</select>
+
+	<select id="selectInteriorAskList3"
+		resultType="org.zerock.domain.InteriorAskVO">
+		SELECT NUM       <!-- 인테리어 신청글 + 업체답변 + 인테리어 후기 READ -->
+		, EMAIL
+		, NAME
+		, TITLE
+		, REGISTDAY
+		, BUDGET
+		, AREA
+		, FIELDOF
+		, ADDRESS
+		, DATESTART
+		, DATEDONE
+		, MESSAGE
+		, TEL
+		, CNAME
+		, ANSWER
+		, GRADE
+		, CONTENTOF
+		, IMAGEA
+		, IMAGEB
+		FROM REQ_MNG
+		ORDER BY NUM DESC
+	</select>
+
+	<select id="listPage"
+		resultType="org.zerock.domain.InteriorAskVO">
+ <![CDATA[
+ SELECT RNUM, NUM     
+       , EMAIL
+      , NAME
+      , TITLE
+      , REGISTDAY
+      , CNAME
+		FROM (
+		SELECT ROW_NUMBER() OVER (ORDER BY NUM) RNUM, A.*
+		FROM REQ_MNG A ORDER BY NUM
+		)
+		WHERE RNUM BETWEEN ((#{page}-1)*#{perPageNum}+1) AND (#{page}*#{perPageNum}) 
+		order by num desc, REGISTDAY desc
+ 		
+ ]]>
+	</select>
+
+	<select id="listCriteria"
+		resultType="org.zerock.domain.InteriorAskVO">
+ <![CDATA[
+ SELECT RNUM, NUM     
+      , EMAIL
+      , NAME
+      , TITLE
+      , REGISTDAY
+      , CNAME
+		FROM (
+		SELECT ROW_NUMBER() OVER (ORDER BY NUM) RNUM, A.*
+		FROM REQ_MNG A ORDER BY NUM
+		)
+		WHERE RNUM BETWEEN ((#{page}-1)*#{perPageNum}+1) AND (#{page}*#{perPageNum})  
+		order by num desc, REGISTDAY desc
+ ]]>
+		<!-- WHERE RNUM BETWEEN 1 AND 10 -->
+		<!-- WHERE RNUM BETWEEN #{pageStart}+1 AND 10 -->
+	</select>
+
+	<select id="countPaging" resultType="int">
+ <![CDATA[
+ select 
+   count(num) 
+ from 
+   req_mng 
+ where 
+   num > 0 
+ ]]>
+	</select>
+
+	<select id="selectByEmail"
+		resultType="org.zerock.domain.InteriorAskVO">
+		SELECT *
+		FROM REQ_MNG
+		WHERE EMAIL = #{email}
+
+	</select>
+
+</mapper>

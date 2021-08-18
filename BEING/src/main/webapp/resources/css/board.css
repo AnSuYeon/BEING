@@ -1,0 +1,131 @@
+@charset "EUC-KR";
+
+
+.box-title {
+   width: 700px;
+   margin: 80px 0 0 600px;
+   text-align: center;
+   font-size: 30px;
+   font-weight: 700;
+   color: #9dcb85;
+}
+
+.box {
+/*    background-color: #9dcb85; */
+   margin: 40px 0 100px 550px;
+   padding-top: 40px;
+   padding-left:40px;
+   width: 800px;
+   height: 850px;
+   text-align: center;
+   border-radius: 7px;
+   border: 2px solid #9dcb85;
+   font-size: 20px;
+   font-weight: 700;
+   color: #6a6a6a;
+}
+
+#btn {
+/*    margin-left: 500px; */
+   width:200px;
+   height: 60px;
+   font:"³ª´® °íµñ";
+   font-size: 20px;
+   color:#ffff;
+   font-weight:bold;
+   margin-top: 30px;
+   background: #8BC26D;
+   
+   border-radius: 5px;
+  border:0;
+  outline:0;
+}
+#btn:hover{
+   background: #7fb362;
+   
+}
+
+.regist-box {
+	text-align: center;
+}
+
+.story-category1 {
+	margin: 30px 50px 30px 35px;
+	
+}
+
+.story-category1 li {
+	display: inline-block;
+	color: #65a343;
+}
+.story-category2 {
+	margin: 30px 50px 30px 5px;
+}
+.story-category2 li {
+	display: inline-block;
+	color: #65a343;
+}
+
+select {
+     width:150px;
+     padding:10px;
+     margin-right:10px;
+     border:1px solid #999;
+     font-family:'Nanumgothic';
+     font-size:20px;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance : none;
+     border-color:#8BC26D;
+     border-radius: 5px;
+     text-align: center;
+     text-align-last: center; 
+	-ms-text-align-last: center; 
+	-moz-text-align-last: center;
+}
+.all-content{
+	resize: none;
+	text-align: center;
+}
+
+.all-content p {
+	float: left;
+	padding-left: 60px;
+	color: #65a343;
+}
+
+
+
+.all-content input{
+	resize: none;
+	font-family:'Nanumgothic';
+     font-size:20px;
+     
+	width:500px;
+	height: 40px;	
+	margin-left: 36px;
+	margin-top: 20px;
+}
+
+.content input {
+	resize: none;
+	font-family:'Nanumgothic';
+    font-size:20px;
+	width:500px;
+	height: 300px;	
+	margin-left: 36px;
+	margin-top: 20px;
+}
+
+
+.all-content textarea {
+	resize: none;
+	font-family:'Nanumgothic';
+     font-size:20px;
+     padding:5px;
+	width:500px;
+	height: 100px;	
+	margin-left: 36px;
+	margin-top: 20px;
+}
+

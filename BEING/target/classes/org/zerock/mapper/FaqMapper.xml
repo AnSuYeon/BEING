@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.FaqMapper">
+
+	<insert id="create">
+		INSERT INTO FAQ
+		(NUM,CATEGORY,QUESTION,ANSWER)
+		values(FAQ_SEQ.nextval,#{category},#{question},#{answer})
+	</insert>
+	
+	<select id="selectFaqList"
+		resultType="org.zerock.domain.FaqVO">
+		SELECT NUM
+		, CATEGORY
+		, QUESTION
+		, ANSWER
+		FROM FAQ
+		ORDER BY NUM DESC
+	</select>
+	
+		<select id="listPage" resultType="org.zerock.domain.FaqVO">
+			 <![CDATA[
+			 SELECT RNUM, NUM
+					, CATEGORY
+					, QUESTION
+					, ANSWER
+					FROM (
+					SELECT ROW_NUMBER() OVER (ORDER BY NUM) RNUM, A.*
+					FROM FAQ A ORDER BY NUM
+					)
+					WHERE RNUM BETWEEN ((#{page}-1)*#{perPageNum}+1) AND (#{page}*#{perPageNum}) 
+					order by num desc
+			 		
+			 ]]>
+	</select>
+
+	<select id="listCriteria" resultType="org.zerock.domain.FaqVO">
+		 <![CDATA[
+		 select RNUM, NUM
+				, CATEGORY
+				, QUESTION
+				, ANSWER
+				FROM (
+				SELECT ROW_NUMBER() OVER (ORDER BY NUM) RNUM, A.*
+				FROM FAQ A ORDER BY NUM
+				)
+				WHERE RNUM BETWEEN ((#{page}-1)*#{perPageNum}+1) AND (#{page}*#{perPageNum})  
+				order by num desc
+		 ]]>
+				<!-- WHERE RNUM BETWEEN 1 AND 10 -->
+				<!-- WHERE RNUM BETWEEN #{pageStart}+1 AND 10 -->
+	</select>
+	
+		<select id="countPaging" resultType="int">
+		 <![CDATA[
+		 select 
+		   count(num) 
+		 from 
+		   FAQ 
+		 where 
+		   num > 0 
+		 ]]>
+	</select>
+	
+	<select id="read" resultType="org.zerock.domain.FaqVO">
+		SELECT NUM
+		, CATEGORY
+		, QUESTION
+		, ANSWER
+		FROM FAQ
+		WHERE NUM = #{num}
+	</select>
+	
+	<delete id="delete">
+		delete from FAQ where NUM = #{num}
+	</delete>
+	
+	<update id="update">
+		UPDATE FAQ SET
+		CATEGORY=#{category}
+		,QUESTION=#{question}
+		,ANSWER=#{answer}
+		WHERE NUM = #{num}
+	</update>
+
+</mapper>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.UserMapper">
+	<select id="login" resultType="org.zerock.domain.UserVO">
+		select email, password, name, lvl
+		from
+		members where email = #{email} and password = #{password}
+	</select>
+
+	<update id="keepLogin">
+		update members set sessionKey = #{sessionId},
+		sessionLimit = #{next} where
+		email = #{email}
+	</update>
+	<select id="checkUserWithSessionKey"
+		resultType="org.zerock.domain.UserVO">
+		select * from members where sessionKey = #{value} and
+		sessionLimit > sysdate
+	</select>
+
+
+	<insert id="create">
+		INSERT INTO MEMBERS
+		(EMAIL,NAME,PASSWORD,REGISTDAY,LVL,email_conf,email_code)
+		values(#{email},#{name},#{password},SYSDATE,0,'N',#{email_code})
+	</insert>
+
+	<select id="read" resultType="org.zerock.domain.UserVO">
+		SELECT NAME
+		, EMAIL
+		, REGISTDAY
+		, LVL
+		FROM MEMBERS
+		WHERE EMAIL = #{email}
+	</select>
+
+	<update id="update">
+		UPDATE MEMBERS SET
+		LVL=#{lvl}
+		WHERE EMAIL = #{email}
+	</update>
+
+	<select id="listPage" resultType="org.zerock.domain.UserVO">
+ <![CDATA[
+ SELECT RNUM, NAME
+		, EMAIL
+		, REGISTDAY
+		, LVL
+		FROM (
+		SELECT ROW_NUMBER() OVER (ORDER BY REGISTDAY) RNUM, A.*
+		FROM MEMBERS A ORDER BY REGISTDAY
+		)
+		WHERE RNUM BETWEEN ((#{page}-1)*#{perPageNum}+1) AND (#{page}*#{perPageNum}) 
+		order by REGISTDAY desc, LVL desc
+ 		
+ ]]>
+	</select>
+
+	<select id="listCriteria" resultType="org.zerock.domain.UserVO">
+ <![CDATA[
+ select RNUM, NAME
+		, EMAIL
+		, REGISTDAY
+		, LVL
+		FROM (
+		SELECT ROW_NUMBER() OVER (ORDER BY REGISTDAY) RNUM, A.*
+		FROM MEMBERS A ORDER BY REGISTDAY
+		)
+		WHERE RNUM BETWEEN ((#{page}-1)*#{perPageNum}+1) AND (#{page}*#{perPageNum})  
+		order by LVL asc, REGISTDAY desc
+ ]]>
+		<!-- WHERE RNUM BETWEEN 1 AND 10 -->
+		<!-- WHERE RNUM BETWEEN #{pageStart}+1 AND 10 -->
+	</select>
+
+	<select id="countPaging" resultType="int">
+ <![CDATA[
+ select 
+   count(RNUM) 
+ from 
+   (
+		SELECT ROW_NUMBER() OVER (ORDER BY REGISTDAY) RNUM, A.*
+		FROM MEMBERS A ORDER BY REGISTDAY
+		)
+ where 
+   RNUM > 0
+ ]]>
+	</select>
+
+	<select id="kakaoLogin" resultType="org.zerock.domain.UserVO">
+		select email, password, name
+		from members where email = #{email}
+	</select>
+
+	<update id="confirmEmail">
+		update members set email_conf = 'y', lvl = 2
+		where email = #{email}
+	</update>
+
+	<select id="findById" resultType="org.zerock.domain.UserVO">
+		select email, name, password, registday, lvl, email_conf, email_code
+		from members
+		where email = #{email}
+	</select>
+
+
+	<!--비빈번호 찾기 -->
+	<update id="updatePassword">
+		update members set password = #{password}
+		where email = #{email}
+	</update>
+
+	<update id="changePassword">
+		update members set NAME = #{name}, PASSWORD = #{password} where EMAIL =
+		#{email}
+	</update>
+
+	<select id="checkPassword" resultType="org.zerock.domain.UserVO">
+		select * from members where email = #{email} and password = #{password}
+
+	</select>
+
+	<delete id="deleteMember">
+		delete from MEMBERS WHERE EMAIL=#{email}
+	</delete>
+
+</mapper>

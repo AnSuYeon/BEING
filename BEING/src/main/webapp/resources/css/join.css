@@ -1,0 +1,88 @@
+@charset "EUC-KR";
+
+.login-logo, .register-logo {
+   font-size: 35px;
+   text-align: center;
+   margin-top: 40px;
+   margin-bottom: 25px;
+   font-weight: 300;
+   font-family: 'Squada One', cursive;
+}
+
+.login-logo a, .register-logo a {
+   color: #444;
+   font-size: 48px;
+   text-decoration: none;
+}
+
+.login-logo a img {
+   position: relative;
+   top : 15px;
+}
+
+.register-box-body {
+	width: 350px;
+    margin:auto;
+    text-align:center;
+}
+
+.form-group {
+    margin:auto;
+    display:block;
+    text-align:left;
+    padding-left:10px;
+}
+
+.form-group input {
+	width: 345px;
+	height: 40px;
+	font-size: 20px;
+}
+
+.form-group p {
+    font-weight: 600;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.form-grout.hasfeedback {
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+#btn {
+   
+   margin-left: 20px;
+   width:336px;
+   height: 50px;
+   font:"³ª´® °íµñ";
+   font-size: 20px;
+   color:#ffff;
+   font-weight:bold;
+   margin-top: 30px;
+  /*  background:rgb(129, 175, 105); */
+   background: #8BC26D;
+   
+   border-radius: 5px;
+  border:0;
+  outline:0;
+}
+#btn:hover{
+   background: #7fb362;
+   
+}
+
+.social-auth-links{
+   display: flex;
+}
+
+.social-auth-links p{
+   padding-left: 57px;
+}
+
+.social-auth-links a{
+   padding:16px;
+}
+.social-auth-links a:hover{
+   color:#7fb362;
+}

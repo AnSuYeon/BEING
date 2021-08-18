@@ -1,0 +1,535 @@
+/* 버튼 */
+#btn1 {
+	width: 346px;
+	height: 55px;
+	font-size: 30px;
+	margin-top: 30px;
+	margin-bottom: 5px;
+	background-color: #8BC26D;
+	border: none;
+	border-radius: 5.5px;
+	color: white;
+}
+
+#btn1:hover {
+	background-color: #7fb362;
+}
+
+.login-box-etc {
+	display: flex;
+	padding-left: 35px;
+	padding-top: 10px;
+	font-size: 20px;
+	align-items: center;
+	color: #0e0e0e;
+	font-weight: 550;
+}
+
+.login-box-etc .pwd1 {
+	margin-right: 58px;
+}
+
+.login-box-etc a {
+	color: inherit;
+}
+
+/* listArticle*/
+.board-list {
+	width: 1300px;
+	position: relative;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 380px;
+	text-align: center;
+	display: block;
+}
+
+.board-list ul {
+	padding-right: 50px;
+	width: 300px;
+	display: inline-flex;
+}
+
+.board-list div {
+	padding: 20px;
+	display: inline-flex;
+}
+
+.board-list img {
+	display: inline-block;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.board-list li a {
+	margin-top: 10px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #81af69;
+}
+
+.board-list li a span {
+	font-size: 25px;
+	font-weight: bold;
+	color: #81af69;
+}
+
+.board-list p {
+	margin: 3px;
+}
+
+.board-list span p {
+	margin: 0;
+	padding-top: 3px;
+	color: #000000;
+	font-size: 15px;
+}
+
+.search-board {
+	text-align: center;
+	display: block;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.search-board select {
+	width: 100px;
+	height: 33px;
+	/* padding:10px;
+    margin-right:10px; */
+	border: 2px solid;
+	font-family: 'Nanumgothic';
+	font-size: 15px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-color: #8BC26D;
+	border-radius: 5px;
+	text-align: center;
+	text-align-last: center;
+	-ms-text-align-last: center;
+	-moz-text-align-last: center;
+	margin: auto;
+	margin-right: 5px;
+	display: inline-flex;
+}
+
+.search-board input {
+	height: 32px;
+	border-radius: 5px;
+	border: 2px solid;
+	border-color: #8BC26D;
+	font-family: 'Nanumgothic';
+	font-size: 20px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.search-board button {
+/* 	border-radius: 0px 5px 5px 0px; */
+/* 	border: 3px solid; */
+/* 	border-color: #8BC26D; */
+	border: none;
+	background-color: #ffffff;
+}
+
+.storybtn {
+	margin: 0 0 0 100px; text-align : center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	/*    display: inline-flex; */
+}
+
+.storybtn .btn {
+	width: 150px;
+	height: 45px;
+	font: "나눔 고딕";
+	font-size: 20px;
+	color: #8BC26D;
+	font-weight: bold;
+	/*    margin-top: 30px; */
+	background: #ffff;
+	border-radius: 5px;
+	border: 5;
+	border-color: #8BC26D;
+	outline: 0;
+}
+
+.storybtn .btn:hover {
+	background: #7fb362;
+}
+
+.category-box {
+	margin-top: 60px;
+}
+
+.category-box h4 {
+	margin-bottom: 20px;
+}
+
+.category-box ul {
+	display: inline-flex;
+	/* 	float: left; */
+	margin-left: 50px;
+	margin-bottom: 20px;
+}
+
+.category-box li {
+	display: inline-flex;
+}
+
+.category-box p {
+	font-size: 20px;
+	color: #8BC26D;
+	font-weight: 500;
+}
+
+.category-box input {
+	margin-left: 10px;
+	background-color: white;
+	border: none;
+	font-size: 15px;
+	/* 	color:#8BC26D; */
+}
+
+.category-box input:hover {
+	color: #8BC26D;
+}
+
+.category-box a {
+	color: #8BC26D;
+	font-weight: 500;
+}
+
+.category-box a:hover {
+	color: #548738;
+	font-weight: 700;
+}
+
+.listbtn {
+	margin: auto;
+	text-align: center;
+}
+
+.listbtn a {
+	font-weight: bold;
+	color: #81af69;
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+/* listInterior */
+
+.interior-list {
+   width:1300px;
+   position:relative;
+   margin:auto;
+   margin-top: 50px;
+   text-align:center;
+}
+
+.interior-list ul {
+   width:400px;
+   display: inline-flex;
+   
+}
+
+.interior-list ul li {
+   margin-bottom: 60px;
+}
+
+.interior-list p {
+   margin-bottom: 5px;
+}
+
+.interior-list ul li .introduce-font {
+   font-size: 13px;
+   font-weight: bold;
+   color: #b0b0b0;;
+}
+
+.interior-list li a{
+	padding-top:5px;
+   font-size:25px;
+   font-weight:bold;
+   color:#81af69;
+}
+.interior-list .intname{
+	padding-top:5px;
+   font-size:25px;
+   font-weight:bold;
+   color:#81af69;
+}
+
+.interior-list li a span{
+   font-size: 25px;
+   font-weight:bold;
+   color:#81af69;
+}
+.interior-list span p{
+   padding-top: 3px;
+   color:#000000;
+   font-size: 15px;
+} 
+
+.interior-list img {
+	border-radius: 5px;
+}
+
+
+.writebtn{
+	 margin:auto;
+   text-align:center;
+   margin-left:1000px;
+   padding-top:10px;
+   padding-bottom:10px;
+}
+
+.writebtn .btn{	
+   width:150px;
+   height: 45px;
+   font:"나눔 고딕";
+   font-size: 20px;
+   color:#8BC26D;
+   font-weight:bold;
+   
+   background:#ffff;
+   border-radius: 5px;
+  border:5;
+  border-color:#8BC26D;
+  outline:0;
+}
+.writebtn .btn:hover{
+   background: #7fb362;   
+}
+
+/* listStore */
+.store-list {
+	width: 1500px;
+	position: relative;
+	margin: auto;
+	text-align: left;
+	padding-left: 35px;
+}
+
+.store-list ul {
+	width: 300px;
+	/* padding: 10px; */
+	display: inline-flex;
+}
+
+.store-list ul li {
+	margin-bottom: 60px;
+}
+
+.store-list p {
+	margin-bottom: 5px;
+}
+
+.store-list div {
+	display: inline-flex;
+	padding: 25px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+/* listStore - font */
+.store-list ul li .brand-font {
+	font-size: 13px;
+	font-weight: bold;
+	color: #b0b0b0;;
+}
+
+/* .store-list ul li p a {
+   color: balck;
+}
+
+.store-list ul li p a:visited {
+   color: balck;
+} */
+.store-list ul li .name-font {
+	font-size: 17px;
+	font-weight: 400;
+	color: black;
+	margin-bottom: 10px;
+}
+
+.store-list ul li .name-a-font {
+	font-size: 17px;
+	font-weight: 500;
+	color: black;
+}
+
+.store-list ul li .dcprice-font {
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+}
+
+.store-list ul li .avggrade-fon {
+	font-size: 15px;
+	font-weight: bold;
+	color: #646464;
+}
+
+.store-list ul li .freeyn-font {
+	font-size: 15px;
+	font-weight: bold;
+	color: white;
+	width: 80px;
+	background-color: #81af69;
+	text-align: center;
+}
+
+/* listStore - btn*/
+.store-check-btn {
+	margin: auto;
+	text-align: center;
+	margin-left: 1000px;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+
+.store-check-btn .btn {
+	width: 150px;
+	height: 45px;
+	font: "나눔 고딕";
+	font-size: 20px;
+	color: #8BC26D;
+	font-weight: bold;
+	background: #ffff;
+	border-radius: 5px;
+	border: 7;
+	border-color: #8BC26D;
+	outline: 0;
+}
+
+.store-check-btn .btn:hover {
+	background: #7fb362;
+}
+/* 오늘의 딜 */
+#bestbook_zone {
+	margin-bottom: 40px;
+	overflow: hidden;
+}
+
+#bestbook_zone h3 {
+	margin-bottom: 10px;
+}
+
+#best_bg {
+	width: 1800px;
+	height: 500px;
+	padding-top: 18px;
+	position: relative;
+	margin: 0 auto;
+}
+
+#best_bg img {
+	display: inline-block;
+	border-radius: 5px;
+}
+
+#best_bg span, #best_bg span strong {
+	display: block;
+	text-align: left;
+}
+
+#best_bg span strong {
+	color: #111111;
+	font-weight: bold;
+	font-size: 20px;
+	display: inline-flex;
+}
+
+#best_bg span {
+	font-size: 15px;
+	font-weight: 400;
+	padding-top: 7px;
+	color: #111111;
+}
+
+#best_bg a:hover span {
+	font-size: 15px;
+	font-weight: 400;
+	padding-top: 7px;
+	color: #81af69;
+}
+
+#best_bg span p {
+	padding-top: 3px;
+	color: #ff7777;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#best_bg .prev_btn {
+	position: absolute;
+	top: 140px;
+	left: 135px;
+}
+
+#best_bg .next_btn {
+	position: absolute;
+	top: 140px;
+	right: 140px;
+}
+
+.main-title {
+	margin-bottom: 10px;
+}
+
+/* store-h1 */
+.store-h1 {
+	width: 1380px;
+	margin: auto;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.store-h1 h1 {
+	font-weight: 550;
+}
+
+.listbtn {
+	margin: auto;
+	text-align: center;
+}
+
+.listbtn a {
+	font-size: 16px;
+	font-weight: bold;
+	color: #81af69;
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.page {
+	text-align: center;
+	list-style-type:none;
+	margin: auto;
+	margin-left: 550px;
+	font-size: 10px;
+	color: black;
+}
+
+.page li {
+	display: inline-flex;
+	margin: 10px;
+	margin-top: 60px;
+}
+
+.page li a {
+	font-size: 20px;
+	color: black;
+}
+
+.page li a:hover {
+	font-size: 20px;
+	color: #81af69;
+}

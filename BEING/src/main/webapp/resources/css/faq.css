@@ -1,0 +1,218 @@
+
+/* listFAQ */
+
+.faqbtn{
+	 margin:auto;
+	 margin-left:750px;
+   text-align:center;
+   padding-top:10px;
+   padding-bottom:70px;
+}
+
+.faqbtn .btn{
+	
+   width:150px;
+   height: 45px;
+   font:"나눔 고딕";
+   font-size: 20px;
+   color:#8BC26D;
+   font-weight:bold;
+   margin-top: 30px;
+   background:#ffff;
+   border-radius: 5px;
+  border:5;
+  border-color:#8BC26D;
+  outline:0;
+}
+.faqbtn .btn:hover{
+   background: #7fb362;
+   
+}
+
+.listbtn{
+	margin:auto;
+	text-align:center;
+	
+}
+ .listbtn a{
+	
+	font-weight:bold;
+	color:#81af69;
+	float:left;
+	padding-right:10px;
+	padding-bottom:10px;
+}
+
+
+
+.faq-list {
+	 margin: 100px 100px 100px 400px;
+   font-size: 30px;
+   color: #6a6a6a;
+   font-family:'Nanumgothic';
+}
+.faq-list a{
+	color: #6a6a6a;
+}
+.faq-list a:hover{
+   background: #7fb362;
+   
+}
+
+
+.faqbox{
+	border : 2px solid #65a343;
+	margin-bottom:100px;
+}
+
+.faqbox th{
+	padding : 10px;
+	text-align:left;
+	font-size: 30px;
+   font-weight: 700;
+   height : 60px;
+}
+.faqbox td{
+	padding : 10px;
+	text-align:left;
+	width:400px;
+}
+
+.faqbox td:nth-child(1){
+	width:300px;
+}
+.faqbox td:nth-child(3){
+	width:500px;
+}
+
+
+.faqbox tr:nth-child(even){
+	background : #cce4be;
+}
+
+
+
+/* newFAQ  */
+
+.box-title {
+   width: 700px;
+   margin: 80px 0 0 600px;
+   text-align: center;
+   font-size: 30px;
+   font-weight: 700;
+   color: #9dcb85;
+}
+
+.box {
+   margin: 40px 0 100px 550px;
+   padding-top: 40px;
+   width: 800px;
+   height: 500px;
+   border-radius: 7px;
+   border: 2px solid #9dcb85;
+   font-size: 20px;
+   font-weight: 700;
+   color: #6a6a6a;
+}
+#btn {
+/*    margin-left: 500px; */
+   width:200px;
+   height: 60px;
+   font:"나눔 고딕";
+   font-size: 20px;
+   color:#ffff;
+   font-weight:bold;
+   margin-top: 30px;
+   background: #8BC26D;
+   
+   border-radius: 5px;
+  border:0;
+  outline:0;
+}
+#btn:hover{
+   background: #7fb362;
+   
+}
+
+
+.faq-con{
+	resize: none;
+	text-align: center;
+}
+
+.faq-con p {
+	float: left;
+	padding-left: 60px;
+	color: #65a343;
+}
+
+
+
+.faq-con input{
+	resize: none;
+	font-family:'Nanumgothic';
+     font-size:20px;
+     padding:5px;
+	width:500px;
+	height: 40px;	
+	margin-left: 36px;
+	margin-top: 20px;
+}
+.faq-cat {
+	margin: 30px 50px 30px 35px;
+	
+}
+
+.faq-cat li {
+	display: inline-block;
+	color: #65a343;
+}
+
+select {
+     width:250px;
+     padding:10px;
+     margin-left:25px;
+     border:1px solid #999;
+     font-family:'Nanumgothic';
+     font-size:20px;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance : none;
+     border-color:#8BC26D;
+     border-radius: 5px;
+     text-align: center;
+     text-align-last: center; 
+	-ms-text-align-last: center; 
+	-moz-text-align-last: center;
+}
+
+
+/*readFAQ*/
+
+
+.list {
+	margin-bottom: 50px;
+}
+
+.list a {
+	padding:5px;
+}
+.list .btn{
+	
+   width:150px;
+   height: 45px;
+   font:"나눔 고딕";
+   font-size: 20px;
+   color:#8BC26D;
+   font-weight:bold;
+   margin-top: 30px;
+   background:#ffff;
+   border-radius: 5px;
+  border:5;
+  border-color:#8BC26D;
+  outline:0;
+}
+.list .btn:hover{
+   background: #7fb362;
+   
+}

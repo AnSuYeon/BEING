@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="u" tagdir="/WEB-INF/tags" %>
+
+
+<!--################ Start Header Area ########-->
+	<header id="header" id="home">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<a>첫 회원가입시 2000원 할인쿠폰 발급!</a>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/img/logo3.jpg" alt="" title="" width="75px" height="75px"/></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li class="menu-has-children"><a href="${pageContext.request.contextPath}">커뮤니티</a>
+							<ul>
+								<li><a href="${pageContext.request.contextPath}">홈</a></li>
+								<li><a href="${pageContext.request.contextPath}/board/listArticle">스토리</a></li>
+								<li><a href="#">노하우</a></li>
+								<li><a href="#">이벤트</a></li>
+							</ul>
+						</li>
+						<li class="menu-has-children"><a href="${pageContext.request.contextPath}/store/listStore">스토어</a>
+							<ul>
+								<li><a href="${pageContext.request.contextPath}/store/listStore">스토어홈</a></li>
+								<li><a href="#">카테고리</a></li>
+								<li><a href="#">오늘의 딜</a></li>
+								<li><a href="#">기획전</a></li>
+							</ul>
+						</li>
+						<li class="menu-has-children"><a href="${pageContext.request.contextPath}/interior/listInterior">인테리어시공</a>
+							<ul>
+								<li><a href="${pageContext.request.contextPath}/interior/listInterior">업체찾기</a></li>
+								<li><a href="${pageContext.request.contextPath}/interiorAsk/newInteriorAskForm">간편상담신청</a></li>
+							</ul>
+						</li>
+						<u:isLogin>
+						<li class="user" style="padding-left: 200px;"><a>${login.name}님 </a></li>
+						<li class="hoverr"><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
+						</u:isLogin>
+<%-- 						<u:isGeneral> --%>
+						<c:if test="${login.lvl eq 2}">
+						<li class="hoverr"><a href="${pageContext.request.contextPath}/user/profile">마이페이지</a></li>
+<%-- 						</u:isGeneral> --%>
+						</c:if>
+<%-- 						<u:isAdmin> --%>
+						<c:if test="${login.lvl eq 1}">
+						<li class="hoverr"><a href="${pageContext.request.contextPath}/admin/index">관리자 페이지</a></li>
+						</c:if>
+<%-- 						</u:isAdmin> --%>
+						
+						<u:notLogin>
+						<li class="menu-active"><a href="${pageContext.request.contextPath}/user/loginForm" style="padding-left: 400px;" class="hoverr">로그인</a></li>
+						<li class="menu-active"><a href="${pageContext.request.contextPath}/user/joinForm" class="hoverr">회원가입</a></li>
+						</u:notLogin>
+					</ul>
+				</nav>
+				<!--######## #nav-menu-container -->
+			</div>
+		</div>
+		
+	</header>
